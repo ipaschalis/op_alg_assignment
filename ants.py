@@ -1,7 +1,7 @@
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-# import seaborn as sns
+import seaborn as sns
 from xml.etree.ElementTree import parse
 
 import aco
@@ -55,20 +55,20 @@ plt.title('Location Map')
 # Show the plot
 plt.show()
 
-# dist_map = aco.distance_matrix(points)
-# sns.heatmap(dist_map)
-# plt.show()
-#
-# inv_dist_map = aco.inverse_distance_matrix(points)
-# sns.heatmap(inv_dist_map)
-# plt.show()
+dist_map = aco.distance_matrix(points)
+sns.heatmap(dist_map)
+plt.show()
+
+inv_dist_map = aco.inverse_distance_matrix(points)
+sns.heatmap(inv_dist_map)
+plt.show()
 
 best_path, monitor_cost = aco.aco(points=points,
                                   alpha=1,
                                   beta=1,
                                   evapo_coef=0.05,
                                   colony_size=60,
-                                  num_iter=10)
+                                  num_iter=50)
 
 print(monitor_cost[-1])
 print('')
