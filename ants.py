@@ -68,7 +68,7 @@ best_path, monitor_cost = aco.aco(points=points,
                                   beta=1,
                                   evapo_coef=0.05,
                                   colony_size=60,
-                                  num_iter=50)
+                                  num_iter=5000)
 
 print(monitor_cost[-1])
 print('')
